@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { endPoint } from '../utility/apiEndPoints';
-const APIAssertion = require('../utility/assertionUtils')
+import  {endPoint}  from '../utility/apiEndPoints';
+import APIAssertion from '../utility/assertionUtils'
 const testUsers = require('../Data/testData.json')
 
 
@@ -10,7 +10,7 @@ test.describe("CRUD Operation", () =>{
     const base_URL = endPoint.BASE_URL;
 
     testUsers.forEach((payload) =>{
-        test("Post API", async ({request})=>{
+        test(`Post API - Create User: ${payload.name}`, async ({request})=>{
             const response = await request.post(`${base_URL}/users`, {
                 data:payload,
                 headers: {

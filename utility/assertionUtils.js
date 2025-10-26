@@ -24,4 +24,4 @@ class APIAssertion {
    }
 }
 
-module.exports = new APIAssertion(); 
+export default new APIAssertion();
